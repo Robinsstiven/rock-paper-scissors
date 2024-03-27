@@ -1,10 +1,10 @@
-console.log('I am the script file');
-
-const score = {
+let score = JSON.parse(localStorage.getItem('score')) || {
   wins: 0,
   losses: 0,
   ties: 0
 };
+
+console.log(score);
 
 
 function playGame(playerMove) {
@@ -64,5 +64,17 @@ function playGame(playerMove) {
     score.ties++;
   }
 
+  localStorage.setItem('score', JSON.stringify(score));
+
   alert(`You picked ${playerMove}. Computer choose ${computerMove}. ${result}\nWins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+}
+
+function resetScore() {
+  score = {
+    wins: 0,
+    losses: 0,
+    ties: 0
+  };
+
+  localStorage.removeItem('score');
 }
