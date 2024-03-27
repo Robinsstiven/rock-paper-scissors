@@ -3,50 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
   <title>Rock, paper, scissors</title>
 </head>
 <body>
+  <h1>Rock, Paper, Scissors</h1>
+
   <button onclick="
-    pickComputerMove();
-
-    if (computerMove === 'rock') {
-      result = 'Tie.';
-    } else if (computerMove === 'paper') {
-      result = 'You lose.';
-    } else if (computerMove === 'scissors') {
-      result = 'You won.';
-    }
-
-    alert(`You picked rock. Computer choose ${computerMove}. ${result}`);
+    playGame('rock');
   ">Rock</button>
 
   <button onclick="
-    pickComputerMove();
-
-    if (computerMove === 'rock') {
-      result = 'You won.';
-    } else if (computerMove === 'paper') {
-      result = 'Tie.';
-    } else if (computerMove === 'scissors') {
-      result = 'You lose.';
-    }
-
-    alert(`You picked paper. Computer choose ${computerMove}. ${result}`);
+    playGame('paper');
   ">Paper</button>
 
   <button onclick="
-    pickComputerMove();
-
-    if (computerMove === 'rock') {
-      result = 'You lose.';
-    } else if (computerMove === 'paper') {
-      result = 'You won.';
-    } else if (computerMove === 'scissors') {
-      result = 'Tie.';
-    }
-
-    alert(`You picked scissors. Computer choose ${computerMove}. ${result}`);
+    playGame('scissors');
   ">Scissors</button>
+
+  <button>Reset</button>
 
   <script src="/scripts.js"></script>
 </body>

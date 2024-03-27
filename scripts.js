@@ -1,21 +1,68 @@
 console.log('I am the script file');
 
-let computerMove = '';
+const score = {
+  wins: 0,
+  losses: 0,
+  ties: 0
+};
 
 
+function playGame(playerMove) {
 
-function pickComputerMove() {
-  const randomNumber = Math.random();
-
-    if (randomNumber >= 0 && randomNumber < 1 / 3) {
-      computerMove = 'rock';
-    } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-      computerMove = 'paper';
-    } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-      computerMove = 'scissors';
+  function pickComputerMove() {
+    let computerMove = '';
+  
+    const randomNumber = Math.random();
+  
+      if (randomNumber >= 0 && randomNumber < 1 / 3) {
+        computerMove = 'rock';
+      } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+        computerMove = 'paper';
+      } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+        computerMove = 'scissors';
+      }
+  
+      let result = '';
+      return computerMove;
+  }
+  
+  const computerMove = pickComputerMove();
+  
+  if (playerMove === 'rock') {
+    if (computerMove === 'rock') {
+      result = 'Tie.';
+    } else if (computerMove === 'paper') {
+      result = 'You lose.';
+    } else if (computerMove === 'scissors') {
+      result = 'You won.';
     }
+  } 
+  else if (playerMove === 'paper') {
+    if (computerMove === 'rock') {
+      result = 'You won.';
+    } else if (computerMove === 'paper') {
+      result = 'Tie.';
+    } else if (computerMove === 'scissors') {
+      result = 'You lose.';
+    }
+  }
+  else if (playerMove === 'scissors') {
+    if (computerMove === 'rock') {
+      result = 'You lose.';
+    } else if (computerMove === 'paper') {
+      result = 'You won.';
+    } else if (computerMove === 'scissors') {
+      result = 'Tie.';
+    }
+  }
 
-    let result = '';
+  if (result === 'You won.') {
+    score.wins++;
+  } else if (result === 'You lose.') {
+    score.losses++;
+  } else if (result === 'Tie.') {
+    score.ties++;
+  }
 
-    console.log(computerMove);
+  alert(`You picked ${playerMove}. Computer choose ${computerMove}. ${result}\nWins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
 }
