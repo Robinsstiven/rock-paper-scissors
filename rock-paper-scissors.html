@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-  </style>
+  <link rel="stylesheet" href="rock-paper-scissors.css">
   <title>Rock, paper, scissors</title>
 </head>
 <body>
@@ -15,23 +11,31 @@
 
   <button onclick="
     playGame('rock');
-  ">Rock</button>
+  " class="move-button">
+    <img src="rock-emoji.png" alt="" class="move-icon">
+  </button>
 
   <button onclick="
     playGame('paper');
-  ">Paper</button>
+  " class="move-button">
+    <img src="paper-emoji.png" alt="" class="move-icon">
+  </button>
 
   <button onclick="
     playGame('scissors');
-  ">Scissors</button>
+  " class="move-button">
+    <img src="scissors-emoji.png" alt="" class="move-icon">
+  </button>
 
-  <p class="js-result"></p>
-  <p class="js-moves"></p>
-  <p class="js-score"></p>
+  <p class="js-result result">You lose.</p>
+
+  <p class="js-moves moves"></p>
+
+  <p class="js-score score"></p>
 
   <button onclick="
     resetScore();
-  ">Reset</button>
+  " class="reset-score-button">Reset Score</button>
 
   <script src="/scripts.js"></script>
 </body>
